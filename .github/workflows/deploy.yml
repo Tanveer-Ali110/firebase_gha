@@ -7,16 +7,20 @@ on:
 
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
+      - name: Install Dependencies
       - uses: actions/setup-node@v3
         with:
           node-version: '16'
+
       - run: npm ci
       - run: npm run build
       - name: GitHub Action for Firebase
-        uses: w9jds/firebase-action@v1.5.0
+        uses: w9jds/firebase-action@master
         with:
           args: deploy --only hosting
         env:

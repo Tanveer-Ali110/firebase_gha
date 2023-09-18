@@ -1,12 +1,18 @@
 {
+  "functions": {
+    "source": "functions",
+    "runtime":"nodejs18"
+  },
   "emulators": {
     "auth": {
       "port": 9099
     },
     "functions": {
-      "port": 5001
+      "port": 5001,
+      "runtime": "nodejs18"
     },
     "firestore": {
+      "host": "localhost",
       "port": 8080
     },
     "database": {
@@ -16,5 +22,9 @@
       "enabled": true
     },
     "singleProjectMode": true
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
   }
 }
